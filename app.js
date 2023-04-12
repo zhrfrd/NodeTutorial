@@ -1,11 +1,14 @@
-const amount = 12;
+const http = require('http');
 
-if (amount < 10) {
-    console.log("Yes");
-}
+const hostname = '127.0.0.1';
+const port = 3000;
 
-else {
-    console.log("No");
-}
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
 
-console.log("Ciao");
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
