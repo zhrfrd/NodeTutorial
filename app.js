@@ -1,14 +1,6 @@
-const http = require('http');
+const names = require('./4-names');   // Check exports from 4-names file
+const sayHi = require('./5-utils');
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+sayHi('susan');
+sayHi(names.peter);
+sayHi(names.john);
