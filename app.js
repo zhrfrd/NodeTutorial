@@ -1,9 +1,18 @@
-const names = require('./4-names');   // Check exports from 4-names file
-const sayHi = require('./5-utils');
-const data = require('./6-alternative-flavour');
+const os = require('os');
 
-console.log(data);
+// Info about current user
+const user = os.userInfo();
+console.log(user);
 
-sayHi('susan');
-sayHi(names.peter);
-sayHi(names.john);
+// Method return the system uptime in seconds
+console.log(`The system uptime is ${os.uptime()}`);
+
+// Current os info
+const currentOS = {
+    name: os.type(),
+    release: os.release(),
+    totalMem: os.totalmem(),
+    freeMem: os.freemem(),
+};
+
+console.log(currentOS);
